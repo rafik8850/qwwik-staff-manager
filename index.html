@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Qwwik Staff Manager</title>
+</head>
+<body>
+  <h1>Qwwik Services Staff Manager</h1>
+
+  <input type="text" id="name" placeholder="Staff Name">
+  <input type="text" id="mobile" placeholder="Mobile Number">
+
+  <button onclick="saveStaff()">Save Staff</button>
+
+  <ul id="staffList"></ul>
+
+  <script>
+    function saveStaff() {
+      let name = document.getElementById("name").value;
+      let mobile = document.getElementById("mobile").value;
+
+      let list = document.getElementById("staffList");
+      let li = document.createElement("li");
+
+      li.innerHTML =
+        name + " - " + mobile +
+        ' <a target="_blank" href="https://wa.me/91' + mobile + '?text=Hello%20' + name + '">WhatsApp</a>';
+
+      list.appendChild(li);
+
+      document.getElementById("name").value = "";
+      document.getElementById("mobile").value = "";
+    }
+  </script>
+</body>
+</html>
